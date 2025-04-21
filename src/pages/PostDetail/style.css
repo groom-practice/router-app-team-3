@@ -2,23 +2,25 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  color: #333;
   width: 100%;
 }
 
 .post-detail-container > h1 {
   font-size: 24px;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .post-detail-container > h2 {
   font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .post-detail-container > p {
   width: 50%;
   font-size: 16px;
+  line-height: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .post-detail-buttons {
@@ -28,24 +30,47 @@
   align-items: center;
 }
 
-.post-detail-buttons > a {
-  text-decoration: none;
-
+.post-detail-buttons > a,
+.post-detail-buttons > button,
+.favorite-modal-buttons > button {
   background-color: var(--button-link-color);
   color: #fff;
   border: none;
   padding: 10px 20px;
+  margin-right: 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s;
 }
 
-.post-detail-buttons > button {
-  background-color: var(--button-link-color);
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s;
+.post-detail-buttons > a {
+  text-decoration: none;
+}
+
+.post-detail-buttons > a:hover,
+.post-detail-buttons > button:hover,
+.favorite-modal-buttons > button:hover {
+  background-color: var(--button-link-hover-color);
+}
+
+.favorite-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.favorite-modal > h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.favorite-modal-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
