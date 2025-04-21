@@ -1,8 +1,10 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import "./index.css";
 
 const BaseLayout = () => {
+  const navigate = useNavigate();
+
   return (
     <main>
       <header>
@@ -12,7 +14,7 @@ const BaseLayout = () => {
         <div className="leftSideBar">
           <Link to="/">HOME</Link>
           <Link to="/posts">POSTS</Link>
-          <button>BACK</button>
+          <button onClick={() => navigate(-1)}>BACK</button>
         </div>
         <div className="content">
           <Outlet />
