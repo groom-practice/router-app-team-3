@@ -5,6 +5,8 @@
   align-items: center;
   flex-direction: column;
   flex: 1;
+  text-align: center;
+  width: 100%;
 }
 
 .home > h3 {
