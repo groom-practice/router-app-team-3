@@ -2,9 +2,14 @@ import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import "./index.css";
 
-function LoginModal({ onClose }) {
+function LoginModal({ onClose, onLogin }) {
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
+
+  const handleLogin = () => {
+    onLogin(id);
+    onClose();
+  };
 
   return createPortal(
     <div className="modal" onClick={onClose}>
@@ -25,7 +30,7 @@ function LoginModal({ onClose }) {
           />
           <div className="btns">
             <button onClick={onClose}>취소</button>
-            <button>로그인</button>
+            <button onClick={handleLogin}>로그인</button>
           </div>
         </div>
       </div>
@@ -36,6 +41,7 @@ function LoginModal({ onClose }) {
 
 function Home() {
   const [showModal, setShowModal] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useState("");
 
   const openModal = () => {
     setShowModal(true);
@@ -45,11 +51,18 @@ function Home() {
     setShowModal(false);
   };
 
+  const handleLogin = (userId) => {
+    setLoggedInUser(userId);
+  };
+
   return (
     <div className="home">
+      {loggedInUser && (
+        <p className="welcomeMessage">{loggedInUser}님 반갑습니다</p>
+      )}
       <h3>Welcome To Main Page!</h3>
       <button onClick={openModal}>로그인</button>
-      {showModal && <LoginModal onClose={closeModal} />}
+      {showModal && <LoginModal onClose={closeModal} onLogin={handleLogin} />}
     </div>
   );
 }
