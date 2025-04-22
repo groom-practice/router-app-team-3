@@ -1,11 +1,12 @@
 .postListSection {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 16px;
   padding: 40px;
   width: 100%;
-  height: 100%;
-  /* overflow: scroll; */
+  height: auto;
+  overflow-y: auto;
 }
 
 .postListSection > h3 {
