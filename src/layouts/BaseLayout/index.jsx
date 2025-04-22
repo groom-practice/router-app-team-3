@@ -16,9 +16,7 @@ const BaseLayout = () => {
           <Link to="/posts">POSTS</Link>
           <button onClick={() => navigate(-1)}>BACK</button>
         </div>
-        <div className="content">
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </main>
   );

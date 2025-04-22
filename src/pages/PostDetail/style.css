@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  padding: 40px;
 }
 
 .post-detail-container > h1 {
@@ -19,7 +20,7 @@
 .post-detail-container > p {
   width: 50%;
   font-size: 16px;
-  line-height: 1.2rem;
+  line-height: 1.5;
   margin-bottom: 20px;
 }
 
