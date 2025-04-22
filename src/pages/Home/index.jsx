@@ -61,7 +61,15 @@ function Home() {
         <p className="welcomeMessage">{loggedInUser}님 반갑습니다</p>
       )}
       <h3>Welcome To Main Page!</h3>
-      <button onClick={openModal}>
+      <button
+        onClick={() => {
+          if (loggedInUser) {
+            setLoggedInUser("");
+          } else {
+            openModal();
+          }
+        }}
+      >
         {loggedInUser ? "로그아웃" : "로그인"}
       </button>
       {showModal && <LoginModal onClose={closeModal} onLogin={handleLogin} />}
