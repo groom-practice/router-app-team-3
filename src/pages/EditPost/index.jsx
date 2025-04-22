@@ -20,12 +20,12 @@ export default function EditPost() {
     navigate(`/posts/${id}`);
   };
 
-  if(!post) return <div className='postFormContainer'>....Loading</div>;
+  if(!post) return <div className='postLoadedContainer'>....Loading</div>;
   
   return(
-    <div className='postFormContainer'>
+    <div className='postLoadedContainer'>
       <h2>Edit Post Id : {id}</h2>
-      <p className='lastEditPostIdText'>
+      <p className='lastEditPostId'>
         마지막으로 수정한 post id : 
       </p>
       <PostForm onSubmit={handleUpdate} initialValues={post} />
