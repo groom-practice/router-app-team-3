@@ -10,14 +10,16 @@ const BaseLayout = () => {
       <header>
         <h1>POST PROJECT</h1>
       </header>
-      <div className="mainContent">
-        <div className="leftSideBar">
+      <section className="mainContent">
+        <nav className="leftSideBar">
           <Link to="/">HOME</Link>
           <Link to="/posts">POSTS</Link>
           <button onClick={() => navigate(-1)}>BACK</button>
-        </div>
-        <Outlet />
-      </div>
+        </nav>
+        <article className="content">
+          <Outlet />
+        </article>
+      </section>
     </main>
   );
 };

@@ -12,9 +12,9 @@ function LoginModal({ onClose, onLogin }) {
   };
 
   return createPortal(
-    <div className="modal" onClick={onClose}>
-      <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-        <div className="loginModalInner">
+    <section className="modal" onClick={onClose}>
+      <article className="modalContent" onClick={(e) => e.stopPropagation()}>
+        <section className="loginModalInner">
           <p>로그인</p>
           <input
             type="text"
@@ -28,13 +28,13 @@ function LoginModal({ onClose, onLogin }) {
             value={pw}
             onChange={(e) => setPw(e.target.value)}
           />
-          <div className="btns">
+          <section className="btns">
             <button onClick={onClose}>취소</button>
             <button onClick={handleLogin}>로그인</button>
-          </div>
-        </div>
-      </div>
-    </div>,
+          </section>
+        </section>
+      </article>
+    </section>,
     document.body
   );
 }
@@ -56,14 +56,14 @@ function Home() {
   };
 
   return (
-    <div className="home">
+    <section className="home">
       {loggedInUser && (
         <p className="welcomeMessage">{loggedInUser}님 반갑습니다</p>
       )}
       <h3>Welcome To Main Page!</h3>
       <button onClick={openModal}>로그인</button>
       {showModal && <LoginModal onClose={closeModal} onLogin={handleLogin} />}
-    </div>
+    </section>
   );
 }
 
