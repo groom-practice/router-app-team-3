@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { getPostById, updatePost } from '../../apis/post';
 import PostForm from '../../components/PostForm';
-import './index.css'
 
 export default function EditPost() {
   const { id } = useParams();
